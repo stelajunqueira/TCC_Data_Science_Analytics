@@ -7,7 +7,7 @@ import warnings
 # Ignorar avisos que podem ocorrer em amostras pequenas
 warnings.filterwarnings('ignore')
 
-# Os dados numÈricos das questıes fornecidas pelo usu·rio
+# Os dados num√©ricos das quest√µes fornecidas pelo usu√°rio
 csv_data = """Q6	Q8	Q9	Q10	Q11	Q12
 2	2	2	3	2	4
 3	2	2	2	2	4
@@ -54,11 +54,11 @@ cols_to_analyze = ['Q6', 'Q8', 'Q9', 'Q10', 'Q11', 'Q12']
 # Carrega os dados da string CSV
 df = pd.read_csv(StringIO(csv_data), sep='\t')
 
-# Converte as colunas relevantes para o tipo numÈrico
+# Converte as colunas relevantes para o tipo num√©rico
 for col in cols_to_analyze:
     df[col] = pd.to_numeric(df[col], errors='coerce')
 
-# Filtra as respostas com valor 0 na Quest„o Q6 para a an·lise de normalidade
+# Filtra as respostas com valor 0 na Quest√£o Q6 para a an√°lise de normalidade
 df_filtered_q6 = df[df['Q6'] != 0].copy()
 
 # Realiza o Teste de Shapiro-Wilk para cada coluna
@@ -66,4 +66,5 @@ print("Resultados do Teste de Shapiro-Wilk:")
 for col in cols_to_analyze:
     stat, p_value = shapiro(df_filtered_q6[col])
     conclusion = "Nao Normal" if p_value <= 0.05 else "Normal"
+
     print(f"Questao {col}: W-statistic={stat:.3f}, p-valor={p_value:.3f} -> Conclusao: {conclusion}")
