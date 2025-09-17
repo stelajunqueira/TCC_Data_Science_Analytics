@@ -4,7 +4,7 @@ from io import StringIO
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Os dados CSV fornecidos, agora com os cabeÁalhos simplificados para evitar erros
+# Os dados CSV fornecidos, agora com os cabe√ßalhos simplificados para evitar erros
 csv_data = """Q6	Q8	Q9	Q10	Q11	Q12
 2	2	2	3	2	4
 3	2	2	2	2	4
@@ -49,7 +49,7 @@ csv_data = """Q6	Q8	Q9	Q10	Q11	Q12
 cols_to_analyze = ['Q6', 'Q8', 'Q9', 'Q10', 'Q11', 'Q12']
 
 # Carrega os dados da string CSV
-# A codificacao cp1252 È usada para evitar erros de leitura, j· que o texto foi corrigido
+# A codificacao cp1252 √© usada para evitar erros de leitura, j√° que o texto foi corrigido
 df = pd.read_csv(StringIO(csv_data), encoding='cp1252', sep='\t')
 
 # Filtra as respostas com valor 0 na Questao Q6, seguindo a metodologia
@@ -75,4 +75,5 @@ plt.savefig('matriz_correlacao_spearman_2.png')
 
 # Print the correlation matrix for a text-based output
 print("\nMatriz de Correlacao de Spearman:")
+
 print(corr_matrix)
