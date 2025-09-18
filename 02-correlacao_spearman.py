@@ -4,7 +4,7 @@ from io import StringIO
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Os dados CSV fornecidos, agora com os cabeçalhos simplificados para evitar erros
+# Os dados convertidos das respostas dos funcionarios nas questoes
 csv_data = """Q6	Q8	Q9	Q10	Q11	Q12
 2	2	2	3	2	4
 3	2	2	2	2	4
@@ -77,3 +77,4 @@ plt.savefig('matriz_correlacao_spearman_2.png')
 print("\nMatriz de Correlacao de Spearman:")
 
 print(corr_matrix)
+
