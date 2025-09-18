@@ -7,7 +7,7 @@ import warnings
 # Ignorar avisos que podem ocorrer em amostras pequenas
 warnings.filterwarnings('ignore')
 
-# Os dados numéricos das questões fornecidas pelo usuário
+# Os dados numéricos das respostas das questões
 csv_data = """Q6	Q8	Q9	Q10	Q11	Q12
 2	2	2	3	2	4
 3	2	2	2	2	4
@@ -68,3 +68,4 @@ for col in cols_to_analyze:
     conclusion = "Nao Normal" if p_value <= 0.05 else "Normal"
 
     print(f"Questao {col}: W-statistic={stat:.3f}, p-valor={p_value:.3f} -> Conclusao: {conclusion}")
+
